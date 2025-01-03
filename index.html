@@ -1,22 +1,59 @@
-<!DOCTYPE html>
+<!DOCTYPE html> 
 <html lang="it">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Messaggi Divertenti</title>
   <style>
+    /* Stile per il corpo della pagina */
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center; /* Centra orizzontalmente */
+      align-items: center;     /* Centra verticalmente */
+      height: 100vh;           /* Occupiamo l'intera altezza della finestra */
+      margin: 0;
+      background-color: #333;  /* Colore di sfondo grigio scuro */
+      color: #fff;             /* Colore del testo principale (bianco) */
+      text-align: center;
+    }
+
+    /* Stile per il contenitore del messaggio */
     #message {
       font-size: 24px;
       font-weight: bold;
-      color: #ff6347;
-      display: none;
+      color: black;            /* Colore del messaggio (nero) */
+      background-color: #f0f0f0; /* Sfondo chiaro per il messaggio */
+      padding: 20px;
+      border-radius: 10px;
+      display: none;           /* Messaggio nascosto inizialmente */
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Stile per il pulsante */
+    button {
+      font-size: 20px;
+      padding: 10px 20px;
+      cursor: pointer;
+      background-color: #ff5722; /* Colore di sfondo del pulsante */
+      color: white;              /* Colore del testo del pulsante */
+      border: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease; /* Transizione per il cambio di colore */
+    }
+
+    /* Effetto al passaggio del mouse sul pulsante */
+    button:hover {
+      background-color: #ff9800; /* Colore quando il mouse passa sopra */
     }
   </style>
 </head>
 <body>
-  <h1>Clicca il pulsante per vedere un messaggio divertente!</h1>
-  <button onclick="showMessage()">Clicca qui</button>
-  <div id="message"></div>
+  <div>
+    <h1>Clicca il pulsante per vedere un messaggio divertente!</h1>
+    <button onclick="showMessage()">Clicca qui</button>
+    <div id="message"></div>  <!-- Contenitore del messaggio -->
+  </div>
 
   <script>
     const messages = [
@@ -25,71 +62,71 @@
       "Il mondo ha bisogno di te!",
       "L'umorismo è la miglior medicina!",
       "Bravissimo! Continua così!",
-"Ci pensi mai che la vita è troppo breve per stressarti con gente che non merita nemmeno il privilegio di essere un problema?",
-"Sei simpatico come un chihuahua attaccato ai maroni.",
-"L'ottimista proclama che viviamo nel migliore dei mondi possibili; e il pessimista teme che possa essere vero (James Branch Cabell).",
-"Se il cervello fosse tassato, tu avresti diritto a un rimborso.",
-"Ci sono momenti in cui tutto va bene: non ti spaventare, non dura (Jules Renard).",
-"Scusa, mi sono reso conto che con te ho esagerato. Il mio scherzo è stato veramente di cattivo gusto. Firmato, la Natura.",
-"La vita è come un rotolo di carta igienica. Speri che sia lunga e godibile, ma finisce sempre nel momento sbagliato (Rudyh).",
-"Non ti piaccio? Siediti pure con gli altri che aspettano che me ne freghi qualcosa.",
-"Se decidi di smettere di bere, fumare e fare l’amore, non è che vivi più a lungo: la vita ti sembra più lunga (Clement Freud).",
-"Ti sei mai chiesta da dove vieni, o dove stai andando? Se vuoi posso dirti dove potresti andare.",
-"Le cose più belle della vita o sono immorali, o sono illegali, oppure fanno ingrassare (George Bernard Shaw).",
-"Quando pubblicate i vostri problemi sui social, pubblicate anche quando li risolvete. Perché poi uno rimane in pensiero.",
-"Sperare significa aver delle idee sbagliate sulla vita (Gottfried Benn).",
-"Sii il cambiamento che vuoi vedere nel mondo, diceva Gandhi. Ad esempio: vuoi che ci siano meno stronzi in circolazione? Resta a casa.",
-"L’uomo passa la prima metà della sua vita a rovinarsi la salute e la seconda metà alla ricerca di guarire (Leonardo da Vinci).",
-"Tu non sei una perla rara. Sei un pirla raro!",
-"Il piacere più grande nella vita è fare ciò che le persone dicono che non puoi fare (Walter Bagehot).",
-"Non te la prendere se c’è chi ti considera mezzo scemo. Si vede che ti conosce solo a metà.",
-"Voglio vivere per sempre, o morire provandoci (Groucho Marx).",
-"La vita mi ha insegnato che alcune persone bisogna saperle prendere… a calci nel sedere!",
-"La maggior parte della gente non vive, tira a campare; e alla fine, neppure muore – crepa (Giovanni Soriano).",
-"Per favore, non interrompermi mentre ti sto ignorando.",
-"Non prendere la vita troppo sul serio. Non ne uscirai vivo (Elbert Hubbard).",
-"Ti darei cinque minuti di intelligenza per farti capire quanto sei idiota.",
-"La nostra vita è una corsa a ostacoli e il traguardo è la tomba (Anacleto Verrecchia).",
-"Tengo una tua foto sempre con me… così ho risolto i miei problemi di stitichezza.",
-"Cara vita, quando dico: “Può andare peggio di così?”, è una domanda retorica, non una sfida.",
-"Sei così brutto che se una ragazza ti chiede di uscire è perché ti sei chiuso in bagno.",
-"I princìpi sono la cosa più nobile nella vita. Bisogna tenerli tanto in alto che, all'occorrenza, vi si possa passare sotto (Michael Horlacher).",
-"Ti devo proprio ringraziare. Appena ti ho visto mi è passato il singhiozzo!",
-"Virtù si chiama la somma di quelle cose che per pigrizia, vigliaccheria o stupidità non abbiamo fatte (Henry Miller).",
-"Tu non sei scemo, sei solo diversamente intelligente.",
-"La civiltà in poche migliaia d'anni è già arrivata sulla luna; un giorno o l'altro arriverà anche sulla terra (Vittorio Giovanni Rossi).",
-"Accetta chi sei. A meno che tu non sia un serial killer (Ellen DeGeneres).",
-"Non ti sputo in faccia per rispetto della mia saliva.",
-"Cielo azzurro. Rondini. Fiori che sbocciano… Se penso che un giorno non vedrò più tutto questo, la vita mi sembra più sopportabile (Romano Bertola).",
-"Sei così brutto che quando sei nato tua madre ha mandato i bigliettini di scuse.",
-"Però dai, le cose sbagliate mi vengono tutte giuste.",
-"Potevi valerne la pena, ma hai preferito farla.",
-"Non sono acida. Sono allegramente incazzata.",
-"I tuoi denti sono come le stelle: gialli e molto distanti tra loro.",
-"Prendi una gioia. Ora posala, che non è tua.",
-"I tuoi denti sono come le stelle: gialli e molto distanti tra loro.",
-"Errare è umano, perseverare è diabolico, mandare a quel paese è terapeutico.",
-"Evita di farti le foto con il tuo cane che mi confondi.",
-"La vita a volte ci regala dei brividi. Non illudiamoci. È febbre.",
-"Sai che differenza c’è tra te e uno specchio? Lo specchio riflette senza parlare e tu parli senza riflettere.",
-"Quando la vita ti mette in ginocchio, fai finta di allacciarti le scarpe.",
-"Sei sempre stato cretino, ma col tempo ti stai perfezionando!",
-"Mi alzo direttamente col piede sbagliato per non crearmi inutili speranze.",
-"Vorrei farti vedere quanto sei fesso alla moviola.",
-"Nulla intaccherà il mio buon umore, perché non ne ho nemmeno un po’.",
-"Non posso farti fesso perché già lo sei (Totò).",
-"Volevo ringraziare tutti coloro che hanno migliorato la mia vita…uscendone."
+      "Ci pensi mai che la vita è troppo breve per stressarti con gente che non merita nemmeno il privilegio di essere un problema?",
+      "Sei simpatico come un chihuahua attaccato ai maroni.",
+      "L'ottimista proclama che viviamo nel migliore dei mondi possibili; e il pessimista teme che possa essere vero (James Branch Cabell).",
+      "Se il cervello fosse tassato, tu avresti diritto a un rimborso.",
+      "Ci sono momenti in cui tutto va bene: non ti spaventare, non dura (Jules Renard).",
+      "Scusa, mi sono reso conto che con te ho esagerato. Il mio scherzo è stato veramente di cattivo gusto. Firmato, la Natura.",
+      "La vita è come un rotolo di carta igienica. Speri che sia lunga e godibile, ma finisce sempre nel momento sbagliato (Rudyh).",
+      "Non ti piaccio? Siediti pure con gli altri che aspettano che me ne freghi qualcosa.",
+      "Se decidi di smettere di bere, fumare e fare l’amore, non è che vivi più a lungo: la vita ti sembra più lunga (Clement Freud).",
+      "Ti sei mai chiesta da dove vieni, o dove stai andando? Se vuoi posso dirti dove potresti andare.",
+      "Le cose più belle della vita o sono immorali, o sono illegali, oppure fanno ingrassare (George Bernard Shaw).",
+      "Quando pubblicate i vostri problemi sui social, pubblicate anche quando li risolvete. Perché poi uno rimane in pensiero.",
+      "Sperare significa aver delle idee sbagliate sulla vita (Gottfried Benn).",
+      "Sii il cambiamento che vuoi vedere nel mondo, diceva Gandhi. Ad esempio: vuoi che ci siano meno stronzi in circolazione? Resta a casa.",
+      "L’uomo passa la prima metà della sua vita a rovinarsi la salute e la seconda metà alla ricerca di guarire (Leonardo da Vinci).",
+      "Tu non sei una perla rara. Sei un pirla raro!",
+      "Il piacere più grande nella vita è fare ciò che le persone dicono che non puoi fare (Walter Bagehot).",
+      "Non te la prendere se c’è chi ti considera mezzo scemo. Si vede che ti conosce solo a metà.",
+      "Voglio vivere per sempre, o morire provandoci (Groucho Marx).",
+      "La vita mi ha insegnato che alcune persone bisogna saperle prendere… a calci nel sedere!",
+      "La maggior parte della gente non vive, tira a campare; e alla fine, neppure muore – crepa (Giovanni Soriano).",
+      "Per favore, non interrompermi mentre ti sto ignorando.",
+      "Non prendere la vita troppo sul serio. Non ne uscirai vivo (Elbert Hubbard).",
+      "Ti darei cinque minuti di intelligenza per farti capire quanto sei idiota.",
+      "La nostra vita è una corsa a ostacoli e il traguardo è la tomba (Anacleto Verrecchia).",
+      "Tengo una tua foto sempre con me… così ho risolto i miei problemi di stitichezza.",
+      "Cara vita, quando dico: “Può andare peggio di così?”, è una domanda retorica, non una sfida.",
+      "Sei così brutto che se una ragazza ti chiede di uscire è perché ti sei chiuso in bagno.",
+      "I princìpi sono la cosa più nobile nella vita. Bisogna tenerli tanto in alto che, all'occorrenza, vi si possa passare sotto (Michael Horlacher).",
+      "Ti devo proprio ringraziare. Appena ti ho visto mi è passato il singhiozzo!",
+      "Virtù si chiama la somma di quelle cose che per pigrizia, vigliaccheria o stupidità non abbiamo fatte (Henry Miller).",
+      "Tu non sei scemo, sei solo diversamente intelligente.",
+      "La civiltà in poche migliaia d'anni è già arrivata sulla luna; un giorno o l'altro arriverà anche sulla terra (Vittorio Giovanni Rossi).",
+      "Accetta chi sei. A meno che tu non sia un serial killer (Ellen DeGeneres).",
+      "Non ti sputo in faccia per rispetto della mia saliva.",
+      "Cielo azzurro. Rondini. Fiori che sbocciano… Se penso che un giorno non vedrò più tutto questo, la vita mi sembra più sopportabile (Romano Bertola).",
+      "Sei così brutto che quando sei nato tua madre ha mandato i bigliettini di scuse.",
+      "Però dai, le cose sbagliate mi vengono tutte giuste.",
+      "Potevi valerne la pena, ma hai preferito farla.",
+      "Non sono acida. Sono allegramente incazzata.",
+      "I tuoi denti sono come le stelle: gialli e molto distanti tra loro.",
+      "Prendi una gioia. Ora posala, che non è tua.",
+      "I tuoi denti sono come le stelle: gialli e molto distanti tra loro.",
+      "Errare è umano, perseverare è diabolico, mandare a quel paese è terapeutico.",
+      "Evita di farti le foto con il tuo cane che mi confondi.",
+      "La vita a volte ci regala dei brividi. Non illudiamoci. È febbre.",
+      "Sai che differenza c’è tra te e uno specchio? Lo specchio riflette senza parlare e tu parli senza riflettere.",
+      "Quando la vita ti mette in ginocchio, fai finta di allacciarti le scarpe.",
+      "Sei sempre stato cretino, ma col tempo ti stai perfezionando!",
+      "Mi alzo direttamente col piede sbagliato per non crearmi inutili speranze.",
+      "Vorrei farti vedere quanto sei fesso alla moviola.",
+      "Nulla intaccherà il mio buon umore, perché non ne ho nemmeno un po’.",
+      "Non posso farti fesso perché già lo sei (Totò).",
+      "Volevo ringraziare tutti coloro che hanno migliorato la mia vita…uscendone."
     ];
 
     function showMessage() {
       const randomMessage = messages[Math.floor(Math.random() * messages.length)];
       const messageDiv = document.getElementById("message");
       messageDiv.textContent = randomMessage;
-      messageDiv.style.display = "block";
+      messageDiv.style.display = "block"; // Mostra il messaggio
 
       setTimeout(() => {
-        messageDiv.style.display = "none";
-      }, 3000);  // Nasconde il messaggio dopo 3 secondi
+        messageDiv.style.display = "none"; // Nasconde il messaggio dopo 10 secondi
+      }, 10000); // Durata di 10 secondi
     }
   </script>
 </body>
